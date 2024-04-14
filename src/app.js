@@ -24,4 +24,10 @@ app.use(express.static("public"));
 // used to enable parsing of cookies from incoming HTTP requests
 app.use(cookieParser());
 
+// router import
+import userRouter from "./routes/user.routes.js";
+
+// routes declaration
+app.use("/api/v1/users", userRouter); // the link will look like this http://localhost:8000/api/v1/users/register
+
 export { app };
